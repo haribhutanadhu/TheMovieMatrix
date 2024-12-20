@@ -78,17 +78,18 @@ export async function getVideoDetails(id){
 //Favoutites data
 
 export async function getFavourites(email) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/favourites?email=${email}`);
+    const res = await fetch(`/api/favourites?email=${email}`);
     if (!res.ok) {
       throw new Error("Failed to fetch favourites");
     }
     const data = await res.json();
     return data.favouritesData;
   }
+
   
 
 export async function getUserData(){
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users`);
+    const res = await fetch("/api/users");
     if(!res.ok){
         throw new Error("Failed to fetch");
     }
