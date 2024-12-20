@@ -78,7 +78,7 @@ export async function getVideoDetails(id){
 //Favoutites data
 
 export async function getFavourites(email) {
-    const res = await fetch(`http://localhost:3000/api/favourites?email=${email}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/favourites?email=${email}`);
     if (!res.ok) {
       throw new Error("Failed to fetch favourites");
     }
@@ -88,7 +88,7 @@ export async function getFavourites(email) {
   
 
 export async function getUserData(){
-    const res = await fetch("http://localhost:3000/api/users");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users`);
     if(!res.ok){
         throw new Error("Failed to fetch");
     }
