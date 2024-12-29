@@ -1,7 +1,6 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 const Delete = ({ movieId }) => {
@@ -17,7 +16,7 @@ const Delete = ({ movieId }) => {
       }
 
       const res = await fetch(
-        `http://localhost:3000/api/favourites?email=${session.user.email}&movieId=${movieId}`,
+        `/api/favourites?email=${session.user.email}&movieId=${movieId}`,
         {
           method: "DELETE",
         }
